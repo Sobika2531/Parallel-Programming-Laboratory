@@ -1,7 +1,7 @@
-#include<stdio.h>
-#include<math.h>
-#include<omp.h>
-#include<time.h>
+#include <stdio.h>
+#include <math.h>
+#include <omp.h>
+#include <time.h>
 
 #define B 10000000000L;
 
