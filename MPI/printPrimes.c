@@ -77,5 +77,44 @@ int main ( int argc, char *argv[] )
   }
   return 0;
 }
-int prime_number ( int n, int id, int p ){int i,j,prime,total;total = 0;for ( i = 2 + id; i <= n; i = i + p ){prime = 1;for ( j = 2; j < i; j++ )                                                                                                    {                                             if ( ( i % j ) == 0 )                                                                                                        {                                                                                                                            prime = 0;                            break;                                                                                                                       }                                                                                                                            }total = total + prime;                                                                                                       }                                                                                                                            return total;}void timestamp ( ){# define TIME_SIZE 40 static char time_buffer[TIME_SIZE];                                                                   const struct tm *tm;                                                                                                         time_t now;now = time ( NULL );                                                                      tm = localtime ( &now );
-strftime ( time_buffer, TIME_SIZE, "%d %B %Y %I:%M:%S %p", tm );printf ( "%s\n", time_buffer );                                                                                                           return;# undef TIME_SIZE}
+
+int prime_number ( int n, int id, int p )
+{
+  int i,j,prime,total;
+  total = 0;
+  
+  for ( i = 2 + id; i <= n; i = i + p )
+  {
+    prime = 1;
+    
+    for ( j = 2; j < i; j++ )
+    {
+      if ( ( i % j ) == 0 )
+      {
+        prime = 0;
+        break;
+      }
+    }
+    
+    total = total + prime;
+  }
+  
+  return total;
+}
+
+void timestamp ( )
+{
+  # define TIME_SIZE 40 
+  static char time_buffer[TIME_SIZE];
+  const struct tm *tm;
+  
+  time_t now;
+  now = time ( NULL );
+  tm = localtime ( &now );
+  
+  strftime ( time_buffer, TIME_SIZE, "%d %B %Y %I:%M:%S %p", tm );
+  printf ( "%s\n", time_buffer );
+ 
+  return;
+  # undef TIME_SIZE
+}
