@@ -20,9 +20,13 @@ int main()
 
   rc=pthread_create(&thread, NULL, func, NULL);
 
-  printf("From the main function, the thread id = %d\n",rc); pthread_join(thread, NULL); //join with main thread
+  printf("From the main function, the thread id = %d\n",rc); 
+  
+  pthread_join(thread, NULL); //join with main thread
 
-  clock_t end=clock(); printf("time is %f\n",(double)(end-start)/CLOCKS_PER_SEC);
+  clock_t end=clock(); 
+  
+  printf("time is %f\n",(double)(end-start)/CLOCKS_PER_SEC);
 
   return 0;
 }
