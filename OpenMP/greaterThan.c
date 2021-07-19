@@ -1,7 +1,7 @@
-#include<stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
-#include<omp.h>
-#include<time.h>
+#include <omp.h>
+#include <time.h>
 
 #define N 1000
 #define M 2000
